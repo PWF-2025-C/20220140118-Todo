@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Todo>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class TodoFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +18,8 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => rand(1, 100),
-            'title' => ucwords(fake()->sentence()),
-            'is_done' => rand(0, 1),
-            'category_id' => rand(1, 5),
+            'user_id' => User::factory(),
+            'title' => ucwords($this->faker->words(2, true)),
         ];
     }
 }

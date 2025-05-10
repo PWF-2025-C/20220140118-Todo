@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Todo;
 use App\Models\User;
+use App\Models\Category;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -29,5 +30,6 @@ class DatabaseSeeder extends Seeder
 
         User::factory(101)->create();
         Todo::factory(500)->create();
+        Category::factory(10)->create();
     }
 }
